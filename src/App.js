@@ -1,24 +1,23 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { Navbar, Nav } from "react-bootstrap";
-import Home from './Home';
-import About from './About';
-import User from './User';
+import Home from "./Home";
+import About from "./About";
+import User from "./User";
 import {
   Link,
   BrowserRouter as Router,
   Route,
   Routes,
-  Switch
+  Switch,
 } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      
       <Router>
         <Navbar bg="dark" variant="dark">
-          <Navbar.Brand>
+          <Navbar.Brand className="text-white">
             <Link to="/">Navbar</Link>
           </Navbar.Brand>
           <Nav className="mr-auto">
@@ -32,7 +31,7 @@ function App() {
               <Link to="/user">User</Link>
             </Nav.Link>
           </Nav>
-          <form className="d-flex">
+          <form className="formData d-flex float-right">
             <input
               className="form-control me-2"
               type="search"
@@ -46,10 +45,11 @@ function App() {
         </Navbar>
         <Routes>
           <Route index element={<Home />} />
-          <Route path="about" element={<About />}  />
+          <Route path="about" element={<About />} />
           <Route path="user" element={<User />} />
         </Routes>
       </Router>
+      
     </div>
   );
 }
